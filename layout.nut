@@ -105,7 +105,7 @@ surface_snap.rotation = 0;
 // Load background based up emulator
 /////////////////////////////////////////
 
-local b_art = fe.add_image("backgrounds/[DisplayName]", 0, 0, flw, flh );
+local b_art = fe.add_image("backgrounds/background.png", 0, 0, flw, flh );
 b_art.alpha=255;
 
 local flyer = fe.add_artwork("flyer", flx*0.0, fly*0.0 flw*1, flh*1 );
