@@ -21,10 +21,10 @@ class UserConfig {
 </ label="Type of wheel", help="Select round wheel or vertical wheel", options="wheel,vert_wheel", order=1 /> enable_list_type="vert_wheel";
 </ label="Select spinwheel art", help="The artwork to spin", options="marquee,wheel", order=2 /> orbit_art="wheel";
 </ label="Wheel transition time", help="Time in milliseconds for wheel spin.", order=3 /> transition_ms="50"; 
-</ label="Enable background animations", help="Enable background animations", options="Yes,No", order=4 /> enable_fanimate="No";  
-</ label="Show character art", help="Show character at the left of the screen", options="Yes,No", order=5 /> enable_gcartart="No"; 
-</ label="Show console art", help="Show consoles at the bottom of the screen", options="Yes,No", order=6 /> enable_gboxart="No";
-</ label="Enable art animations", help="Enable box and cartidge art animations", options="Yes,No", order=7 /> enable_ganimate="No";
+</ label="Enable background animations", help="Enable background animations", options="No", order=4 /> enable_fanimate="No";  
+</ label="Show character art", help="Show character at the left of the screen", options="No", order=5 /> enable_gcartart="No"; 
+</ label="Show console art", help="Show consoles at the bottom of the screen", options="No", order=6 /> enable_gboxart="No";
+</ label="Enable art animations", help="Enable box and cartidge art animations", options="No", order=7 /> enable_ganimate="No";
 </ label="Select pointer", help="Select animated pointer", options="default,none", order=8 /> enable_pointer="default"; 
 </ label="Enable game information", help="Show game information", options="Yes,No", order=9 /> enable_ginfo="No";
 </ label="Enable text frame", help="Show text frame", options="Yes,No", order=10 /> enable_frame="No"; 
@@ -107,21 +107,6 @@ surface_snap.rotation = 0;
 
 local b_art = fe.add_image("backgrounds/background.png", 0, 0, flw, flh );
 b_art.alpha=255;
-
-local flyer = fe.add_artwork("flyer", flx*0.0, fly*0.0 flw*1, flh*1 );
-
-if ( my_config["enable_fanimate"] == "Yes" )
-{
-	local flyer_shrink_cfg = {
-    	when = Transition.ToNewSelection,
-    	property = "scale",
-    	start = 1.4,
-    	end = 1.0,
-    	time = 1000
-	}
-
-	animation.add( PropertyAnimation( flyer, flyer_shrink_cfg ) );
-}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 //Cartart
